@@ -3,7 +3,7 @@ package net.viralpatel.struts2;
 public class User {
 	private String firstname;
 	private String lastname;
-	private boolean selected;
+	private boolean isSelected;
 
 	public User() {
 	}
@@ -11,7 +11,7 @@ public class User {
 	public User(String firstname, String lastname,boolean sel ) {
 		this.setFirstname(firstname);
 		this.setLastname(lastname);
-		this.setSelected(sel);
+		this.setisSelected(sel);
 
 	}
 
@@ -31,12 +31,12 @@ public class User {
 		this.lastname = lastname;
 	}
 
-	public boolean isSelected() {
-		return selected;
+	public boolean getisSelected() {
+		return isSelected;
 	}
 
-	public void setSelected(boolean selected) {
-		this.selected = selected;
+	public void setisSelected(boolean selected) {
+		this.isSelected = selected;
 	}
 
 	//Add Getter and Setter methods

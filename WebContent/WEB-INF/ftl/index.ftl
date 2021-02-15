@@ -10,21 +10,20 @@
   <div id="header">
     <h2><a href="//www.viralpatel.net"><img height="37" width="236" border="0px" src=
     "https://www.viralpatel.net/wp-content/themes/vp/images/logo.png" align=
-    "left" /></a> FreeMarker Struts2 Hello World</h2>
+    "left" /></a> FreeMarker Struts2 Application</h2>
   </div>
 
   <div id="content">
     <fieldset>
-      <legend>Add User</legend>
+      <legend>Select Accommodations:</legend>
 
 	<@s.form action="add" method="post">
-	    <@s.textfield label="First name" name="user.firstname"/>
-	    <@s.textfield label="Last name" name="user.lastname"/>
-	    <#list userList as answerList>
+	    <#assign acclist = ['ZoomText', 'Modifiable screen']>
+	    <#list acclist as answerList>
                                     <span class="listFloatLeft">
                                         <input id="answerList${answerList_index}" type="checkbox" class="require-one surveyAnswer"
-                                            value="${answerList.lastname}" name="answerList${answerList_index}"
-                                        > <label for="answerList${answerList_index}">${answerList.lastname}</label>
+                                            value=${answerList} name="user.firstname" list="userList">
+                                             <label for="answerList${answerList_index}">${answerList}</label>
                                     </span>
                                 </#list>
 	    <@s.submit value="Save"/>
@@ -33,14 +32,10 @@
     </fieldset><br />
 
     <table class="datatable">
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-      </tr>
 	<#list userList as user>
-  	<tr>
-  		<td>${user.firstname}</td> <td>${user.lastname}</td>
-  	</tr>
+	  	<tr>
+	  		<td>${user.firstname}</td>
+	  	</tr>
     </#list>	  
     </table>
   </div>

@@ -15,11 +15,18 @@ public class UserAction extends ActionSupport {
 	private User user;
 	
 	static {
-		userList.add(new User("Bill", "Gates",false));
-		userList.add(new User("Steve", "Jobs",false));
-		userList.add(new User("Larry", "Page",false));
-		userList.add(new User("Sergey", "Brin",false));
-		userList.add(new User("Larry", "Ellison",false));
+		userList.add(new User("", "",true));
+//		userList.add(new User("Steve", "Jobs",true));
+//		userList.add(new User("Larry", "Page",false));
+//		userList.add(new User("Sergey", "Brin",false));
+//		userList.add(new User("Larry", "Ellison",false));
+	}
+	
+	static {
+		checkList.add(new User("Acc1", "Acc1",true));
+		checkList.add(new User("Acc2", "Acc2",true));
+		checkList.add(new User("Acc3", "Acc3",true));
+
 	}
     /**
      * Action method to display user list. Uses <code>userList</code> array 
@@ -27,6 +34,10 @@ public class UserAction extends ActionSupport {
      * @return SUCCESS 
      */
     public String list() {
+    	return SUCCESS;
+    }
+    
+    public String checklist() {
     	return SUCCESS;
     }
  
@@ -38,9 +49,8 @@ public class UserAction extends ActionSupport {
     public String add() {
     	
     	System.out.println("User:"+user);
-    	
+    	 userList.clear();
         userList.add(user);
-        checkList.add(user);
     	
     	return SUCCESS;
     }
@@ -55,11 +65,11 @@ public class UserAction extends ActionSupport {
     
     public List<User> getcheckList() {
     	return checkList;
-        }
+    }
 
-        public void setcheckList(List<User> userList) {
-    	UserAction.checkList = userList;
-        }
+    public void setcheckList(List<User> checkList) {
+    	UserAction.checkList = checkList;
+    }
 
     public User getUser() {
 	return user;
